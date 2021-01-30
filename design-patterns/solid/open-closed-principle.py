@@ -37,6 +37,7 @@ class Specification:
 class Filter:
     def filter(slef, items, spec):
         pass
+    
 # ColorSpecification is a class that inherit specification
 class ColorSpecification(Specification):
     def __init__(self, color):
@@ -61,6 +62,7 @@ class AndSpecification(Specification):
         return all(map(
             lambda spec: spec.is_satisfied(item), self.args
         ))
+
 class BetterFilter(Filter):
     def filter(self, items, spec):
         for item in items:
